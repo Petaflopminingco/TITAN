@@ -1,0 +1,35 @@
+Analyze these {{$json.count}} real vulnerabilities from a security scan:
+
+{{JSON.stringify($json.vulnerabilities, null, 2)}}
+
+For EACH vulnerability record above:
+1. Analyze the name, description, and plugin_output fields
+2. Add "asset_type" field: "Host", "Container", or "Application"
+3. Add "team_assignment" field: "Operations", "Container Team", or "Application Team"
+
+Return a JSON array with ALL original fields plus the two new fields:
+
+[
+  {
+    "plugin_id": <original value>,
+    "cve": <original value>,
+    "cvss": <original value>,
+    "risk": <original value>,
+    "host": <original value>,
+    "ip_address": <original value>,
+    "protocol": <original value>,
+    "port": <original value>,
+    "name": <original value>,
+    "synopsis": <original value>,
+    "description": <original value>,
+    "solution": <original value>,
+    "see_also": <original value>,
+    "plugin_output": <original value>,
+    "first_discovered": <original value>,
+    "last_observed": <original value>,
+    "asset_type": "Host|Container|Application",
+    "team_assignment": "Operations|Container Team|Application Team"
+  }
+]
+
+Return ONLY the JSON array. Do not include any explanatory text or markdown formatting.
