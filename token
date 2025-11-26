@@ -1,1 +1,23 @@
-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
+CREATE TABLE vulnerabilities (
+    id SERIAL PRIMARY KEY,
+    cve VARCHAR(50),
+    cvss DECIMAL(3,1),
+    risk VARCHAR(20),
+    host VARCHAR(100),
+    ip_address VARCHAR(45),
+    protocol VARCHAR(10),
+    port INTEGER,
+    name TEXT,
+    synopsis TEXT,
+    description TEXT,
+    solution TEXT,
+    see_also TEXT,
+    plugin_output TEXT,
+    first_discovered VARCHAR(50),
+    last_observed VARCHAR(50),
+    assignment VARCHAR(100),
+    plugin_id INTEGER,
+    assignment_reasoning TEXT,
+    human_in_loop VARCHAR(5),
+    createdat TIMESTAMP
+);
