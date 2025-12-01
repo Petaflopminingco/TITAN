@@ -1,0 +1,9 @@
+UPDATE vulnerabilities 
+SET priority = CASE
+    WHEN LOWER(risk) = 'critical' THEN 4
+    WHEN LOWER(risk) = 'high' THEN 3
+    WHEN LOWER(risk) = 'medium' THEN 2
+    WHEN LOWER(risk) = 'low' THEN 1
+    ELSE 0
+END
+WHERE priority IS NULL;
